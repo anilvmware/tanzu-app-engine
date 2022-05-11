@@ -1,0 +1,19 @@
+modules:
+  overview:
+    name: Workshop Intro
+    exit_sign: Start Workshop
+  exercises/01-kpack-create-image:
+    name: Build an Image
+    exit_sign: Next
+  exercises/02-kpack-rebuild-image:
+    name: Rebuild the Image
+    exit_sign: Next
+  exercises/03-kpack-inspect-sbom:
+    name: Inspect the Image and SBOM
+    exit_sign: Next
+  exercises/04-kpack-rebase-image:
+    name: Rebase the Image
+    exit_sign: Next
+  summary:
+    name: Workshop Summary
+    exit_sign: Finish Workshop

@@ -1,0 +1,10 @@
+name: kpack Overview
+
+modules:
+    activate:
+    - overview
+    - exercises/01-kpack-create-image
+    - exercises/02-kpack-rebuild-image
+    - exercises/03-kpack-inspect-sbom
+    - exercises/04-kpack-rebase-image
+    - summary
