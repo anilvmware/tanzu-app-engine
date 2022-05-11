@@ -8,15 +8,32 @@ To accomplish this, you can set the revision of the Image resource to a specific
 > In reality, you would accomplish this using your Continuous Integration pipeline to update the value in the Image resource.
 
 Update the image to build a specific commit id.
-This time the build should be faster, as it is leveraging cache.
 ```terminal:execute
 command: |-
     kp image patch hello-go \
       --git-revision 03ce0a044a036a74b40f0afcfaa0590cb10edecd
-      --wait
+```
+
+This time the build should be faster, as it is leveraging cache.
+Check the logs to see the progress.
+You should see `Build reason(s): COMMIT` near the beginning of the log.
+```terminal:execute
+command: kp build logs hello-go
 ```
 
 Check the images on the registry. You should see a second image.
 ```terminal:execute
 command: skopeo list-tags docker://{{ registry_host }}/hello-go
+```
+
+The response should look something like this:
+```shell
+{
+    "Repository": "registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/hello-go",
+    "Tags": [
+        "b1.20220510.143656",
+        "latest"
+        "b2.20220511.024535",
+    ]
+}
 ```

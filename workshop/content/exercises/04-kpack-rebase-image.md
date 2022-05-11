@@ -21,7 +21,25 @@ command: |-
        --run-image paketobuildpacks/run:1.1.59-base-cnb
 ```
 
-This automatically causes the ClusterBuilder to update, which triggers kpack to update the image.
+This automatically causes the ClusterBuilder to update.
+Check the registry to verify that a second builder image as created.
+```terminal:execute
+command: skopeo list-tags docker://{{ registry_host }}/builder
+```
+
+The output should look like this:
+```shell
+{
+    "Repository": "registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/builder",
+    "Tags": [
+        "20220511024322",
+        "latest",
+        "20220511025201"
+    ]
+}
+```
+
+This triggers kpack to update the image.
 
 Check the list of builds. You should see a new, third build.
 ```terminal:execute
@@ -29,16 +47,17 @@ command: kp build list
 ```
 
 Check the build logs.
-You can see they are different from the build logs—much shorter and mention only a "rebase" phase.
+You can see they are different from the build logs—much shorter, with `Build reason(s): STACK`, and a single "rebase" phase.
 ```terminal:execute
 command: kp build logs hello-go -b 3
 ```
 
 Check the registry.
 You should see a new image.
-This image uses the same layers as the previous one, with only the stack layers swapped out.
-This means the image update was fast and safe, as no part of the image was changed unnecessarily.
-It is ready to be re-deployed to your production cluster.
 ```terminal:execute
 command: skopeo list-tags docker://{{ registry_host }}/hello-go
 ```
+
+The new image uses the same layers as the previous one, with only the stack layers swapped out.
+This means the image update was fast and safe, as no part of the image was changed unnecessarily.
+It is ready to be re-deployed to your production cluster!
