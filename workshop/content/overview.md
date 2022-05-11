@@ -26,5 +26,5 @@ default                 False
 If the output looks like this (the "LATESTIMAGE" value will be different), then you're ready to get started!
 ```
 NAME      LATESTIMAGE                                                                                                                          READY
-default   registry-lab-kpack-w01-s001.educates-local-dev.xyz/builder@sha256:db38b2ea5f11aa13d6c618ffea331038b718ca65d843826fa44734ddd2ed7afb   True
+default   registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/builder@sha256:db38b2ea5f11aa13d6c618ffea331038b718ca65d843826fa44734ddd2ed7afb   True
 ```

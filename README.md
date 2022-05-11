@@ -1,4 +1,4 @@
-# lab-kpack
+# lab-kpack-kubecon
 =====================
 
 Originally created for KubeCon 2022
@@ -17,8 +17,8 @@ cd ..
 
 3. Deploy the workshop:
 ```shell
-git clone https://github.com/vmware-tanzu-labs/lab-kpack
-cd lab-kpack
+git clone https://github.com/vmware-tanzu-labs/lab-kpack-kubecon
+cd lab-kpack-kubecon
 make
 ```
 
@@ -33,8 +33,8 @@ If you already have the Educates operator installed and configured, to
 deploy and view this sample workshop, run:
 
 ```
-git clone https://github.com/vmware-tanzu-labs/lab-kpack
-cd lab-kpack
+git clone https://github.com/vmware-tanzu-labs/lab-kpack-kubecon
+cd lab-kpack-kubecon
 kubectl apply -f ./resources/workshop.yaml
 kubectl apply -f ./resources/training-portal.yaml
 ```
@@ -43,5 +43,5 @@ This will deploy a training portal hosting just this workshop. To get the
 URL for accessing the training portal run:
 
 ```
-kubectl get trainingportal/lab-kpack
+kubectl get trainingportal/lab-kpack-kubecon
 ```

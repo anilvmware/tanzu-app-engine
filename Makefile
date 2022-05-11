@@ -1,4 +1,4 @@
-PORTAL_NAME = lab-kpack
+PORTAL_NAME = lab-kpack-kubecon
 REGISTRY = localhost:5001
 
 all: publish-workshop deploy-workshop

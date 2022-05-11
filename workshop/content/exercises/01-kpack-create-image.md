@@ -51,7 +51,7 @@ command: skopeo list-tags docker://{{ registry_host }}/hello-go
 The response should look something like this:
 ```shell
 {
-    "Repository": "registry-lab-kpack-w01-s001.educates-local-dev.xyz/hello-go",
+    "Repository": "registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/hello-go",
     "Tags": [
         "b1.20220510.143656",
         "latest"
