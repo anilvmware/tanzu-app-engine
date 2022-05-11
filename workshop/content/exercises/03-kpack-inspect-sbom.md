@@ -15,7 +15,7 @@ It includes the exact run image, buildpack versions, and application launch proc
 You could easily determine if you need to provide updated base images or buildpacks and recreate the image to eliminate the vulnerability.
 
 ```shell
-Inspecting image: registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/hello-go
+Inspecting image: registry-{{session_namespace}}.{{ingress_domain}}/hello-go
 
 REMOTE:
 

@@ -22,7 +22,7 @@ command: |-
 ```
 
 This automatically causes the ClusterBuilder to update.
-Check the registry to verify that a second builder image as created.
+Check the registry to verify that a second builder image was created.
 ```terminal:execute
 command: skopeo list-tags docker://{{ registry_host }}/builder
 ```
@@ -30,7 +30,7 @@ command: skopeo list-tags docker://{{ registry_host }}/builder
 The output should look like this:
 ```shell
 {
-    "Repository": "registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/builder",
+    "Repository": "registry-{{session_namespace}}.{{ingress_domain}}/builder",
     "Tags": [
         "20220511024322",
         "latest",

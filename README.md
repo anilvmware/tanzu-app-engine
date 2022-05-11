@@ -3,6 +3,12 @@
 
 Originally created for KubeCon 2022
 
+### Requirements
+
+This workshop uses a per session image registry under Educates. Educates must
+therefore be deployed with a secure ingress otherwise parts of the workshop
+using the image registry will not work.
+
 ### Run locally
 
 1. Create a cluster:
@@ -36,7 +42,7 @@ deploy and view this sample workshop, run:
 git clone https://github.com/vmware-tanzu-labs/lab-kpack-kubecon
 cd lab-kpack-kubecon
 kubectl apply -f ./resources/workshop.yaml
-kubectl apply -f ./resources/training-portal.yaml
+kubectl apply -f ./resources/trainingportal.yaml
 ```
 
 This will deploy a training portal hosting just this workshop. To get the

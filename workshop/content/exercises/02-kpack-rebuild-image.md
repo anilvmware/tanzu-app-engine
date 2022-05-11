@@ -1,4 +1,4 @@
-In the previous step, yo configured the kpack Image resource to point to branch "main" of the source code repository (`--git-revision main`).
+In the previous step, you configured the kpack Image resource to point to branch "main" of the source code repository (`--git-revision main`).
 
 Any commit to this branch will trigger a rebuild. However, kpack polls the git repo every 5 minutes. In the interest of time, we are going to take another approach to trigger a rebuild.
 
@@ -21,7 +21,7 @@ You should see `Build reason(s): COMMIT` near the beginning of the log.
 command: kp build logs hello-go
 ```
 
-Check the images on the registry. You should see a second image.
+When the build is complete, check the images on the registry. You should see a second image.
 ```terminal:execute
 command: skopeo list-tags docker://{{ registry_host }}/hello-go
 ```
@@ -29,7 +29,7 @@ command: skopeo list-tags docker://{{ registry_host }}/hello-go
 The response should look something like this:
 ```shell
 {
-    "Repository": "registry-lab-kpack-kubecon-w01-s001.educates-local-dev.xyz/hello-go",
+    "Repository": "registry-{{session_namespace}}.{{ingress_domain}}/hello-go",
     "Tags": [
         "b1.20220510.143656",
         "latest"
