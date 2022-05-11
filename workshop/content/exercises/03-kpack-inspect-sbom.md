@@ -81,7 +81,7 @@ after: 0
 
 If indeed you identified a vulnerable component in the image, you would need to update your builder with a new stack (build and run base OS images) or store (collection of buildpacks).
 You would obtain these from your buildpacks provider.
-In this case, we are using [Paketo Buildpacks](paketo.io).
+In this case, we are using [Paketo Buildpacks](https://paketo.io).
 
 > Note: You will see this in action in the next exercise.
 
