@@ -1,5 +1,4 @@
 # lab-kpack-kubecon
-=====================
 
 Originally created for KubeCon 2022
 
