@@ -1,6 +1,6 @@
 Upgrading the Operating System (OS) on all running machines has traditionally been an operational challenge that may take some organizations weeks or even months to complete.
 
-This is one area where kpack shines.
+This is an area where kpack really shines.
 
 Cloud Native Buildpacks allow you to swap out the OS layers of an image in seconds (or miliseconds).
 
@@ -11,9 +11,10 @@ This is a significant improvement in security posture for most organizations.
 Let's give it a try now.
 
 Swapping out the OS is called "rebasing."
-kpack will automatically rebase images when a new stack (base and run images) is provided to the builder. (Otherwise, if application source code or buildpacks change, kpack executes a rebuild.)
+kpack will automatically rebase images when a new stack (base and run images) is provided to the builder. (In contrast, if application source code or buildpacks change, kpack executes a _rebuild_.)
 
 Update the build and run images in the ClusterStack.
+Notice that you are pulling new base images from Paketo, your OSS Buildpacks provider.
 ```terminal:execute
 command: |-
     kp clusterstack save base \
@@ -27,7 +28,7 @@ Check the registry to verify that a second builder image was created.
 command: skopeo list-tags docker://{{ registry_host }}/builder
 ```
 
-The output should look like this:
+The output should look like this. If you don't see a second builder image published, wait a few moments and re-run the `skopeo` command.
 ```shell
 {
     "Repository": "registry-{{session_namespace}}.{{ingress_domain}}/builder",
@@ -39,15 +40,15 @@ The output should look like this:
 }
 ```
 
-This triggers kpack to update the image.
+This automatically triggers kpack to update the image.
 
 Check the list of builds. You should see a new, third build.
 ```terminal:execute
 command: kp build list
 ```
 
-Check the build logs.
-You can see they are different from the build logs—much shorter, with `Build reason(s): STACK`, and a single "rebase" phase.
+Check the logs.
+You can see they are different from the initial build and rebuild logs—much shorter, with `Build reason(s): STACK`, and a single "rebase" phase.
 ```terminal:execute
 command: kp build logs hello-go -b 3
 ```

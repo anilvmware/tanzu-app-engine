@@ -41,10 +41,10 @@ Processes:
   hello-server (default)                     /layers/paketo-buildpacks_go-build/targets/bin/hello-server                    /workspace
 ```
 
-**Software Bill of Materials**
+**Software Bill of Materials (SBOM)**
 
 Perhaps you learned a certain dependency was compromised—for example, Go Runtime version 1.17.
-Export the Software Bill of Materials (SBOM) to see dependencies reported by buildpacks.
+Export the SBOM to see dependencies reported by buildpacks.
 ```terminal:execute
 command: |-
     pack sbom download {{ registry_host }}/hello-go --remote \
@@ -52,7 +52,7 @@ command: |-
 ```
 
 The output should look something like this.
-You can see the content is provided in different formats.
+You can see the SBOM is provided in different formats.
 ```shell
 hello-go/layers/
 └── sbom
@@ -69,6 +69,7 @@ hello-go/layers/
 
 Open the SYFT-formatted file in the editor and find the version of the Go binary used.
 You would be able to verify if it is the same as the Go Runtime version with the known vulnerability.
+Lucky for us, this image seems to have a newer Go Runtime than the one we heard was compromised.
 ```editor:select-matching-text
 file: ~/layers/sbom/launch/paketo-buildpacks_go-build/targets/sbom.syft.json
 text: "goCompiledVersion"
@@ -78,17 +79,17 @@ after: 0
 
 **Getting a Patch!**
 
-If indeed you indentified a vulnerable component in the image, you would need to update your builder with a new stack (build and run base OS images) or store (collection of buildpacks).
+If indeed you identified a vulnerable component in the image, you would need to update your builder with a new stack (build and run base OS images) or store (collection of buildpacks).
 You would obtain these from your buildpacks provider.
-In this case, we are using [Paketo Buildpacks](paketio.io).
+In this case, we are using [Paketo Buildpacks](paketo.io).
+
+> Note: You will see this in action in the next exercise.
 
 **Automated Updates at Scale**
 
 Once you update the builder in your registry, kpack will automatically update all impacted images.
 
-As you can see, kpack can patch any number of images in a safe, secure, and consistent way. You can then re-deploy the images to your productions clusters to eliminate the known vulnerabilities.
-
-> Note: You will see this in action in the next exercise.
+In this way, kpack can patch any number of images in a safe, secure, and consistent way. You can then re-deploy the images to your production clusters to eliminate the known vulnerabilities.
 
 <br>
 <hr/>

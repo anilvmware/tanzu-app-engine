@@ -9,7 +9,7 @@ modules:
     name: Rebuild the Image
     exit_sign: Next
   exercises/03-kpack-inspect-sbom:
-    name: Inspect the Image and SBOM
+    name: Inspect the Image and Bill of Materials
     exit_sign: Next
   exercises/04-kpack-rebase-image:
     name: Rebase the Image
