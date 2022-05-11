@@ -6,12 +6,14 @@ kpack makes it very easy to build and maintain images securely and repeatably, o
 
 In this workshop, you will use kpack to:
 - Build an image
-- Inspect image metadata and Software Bill of Materials
 - Rebuild the image
-- Rebase the image
+- Inspect image metadata and Bill of Materials
+- Rebase the image (swap OS)
+
+**Check environment**
 
 kpack has already been installed into the workshop cluster.
-Some resources may take a moment to start up.
+However, some resources may take a moment to start up.
 Please run this command to check if the environment is ready:
 ```terminal:execute
 command: kubectl get clusterbuilder default
