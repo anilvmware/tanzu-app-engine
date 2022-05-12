@@ -2,7 +2,6 @@
 
 set -x
 
-#STATUS=1; ATTEMPTS=0; CMD="kubectl get crd/builders.kpack.io -o name";
 STATUS=1; ATTEMPTS=0; CMD="kp config default-repository";
 until [ $STATUS -eq 0 ] || $CMD || [ $ATTEMPTS -eq 12 ]; do
   sleep 5;
