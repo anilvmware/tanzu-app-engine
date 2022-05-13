@@ -5,6 +5,7 @@ metadata:
 spec:
   title: Building Images with kpack
   description: Learn how kpack can help you build images securely and efficiently at scale
+  url: https://github.com/vmware-tanzu-labs/lab-kpack-kubecon
   workshop:
     files:
     - image:
