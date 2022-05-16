@@ -10,7 +10,7 @@ until [ $STATUS -eq 0 ] || $ROLLOUT_STATUS_CMD || [ $ATTEMPTS -eq 12 ]; do
     sleep 5
     $ROLLOUT_STATUS_CMD
     STATUS=$?
-    ATTEMPTS=$((attempts + 1))
+    ATTEMPTS=$((ATTEMPTS + 1))
 done
 
 # Now wait for deployment of kpack-controller. We don't care about the
@@ -24,5 +24,5 @@ until [ $STATUS -eq 0 ] || $ROLLOUT_STATUS_CMD || [ $ATTEMPTS -eq 12 ]; do
     sleep 5
     $ROLLOUT_STATUS_CMD
     STATUS=$?
-    ATTEMPTS=$((attempts + 1))
+    ATTEMPTS=$((ATTEMPTS + 1))
 done
