@@ -6,7 +6,7 @@ STATUS=1; ATTEMPTS=0; CMD="kp config default-repository";
 until [ $STATUS -eq 0 ] || $CMD || [ $ATTEMPTS -eq 12 ]; do
   sleep 5;
   $CMD;
-  STATUS=$?; ATTEMPTS=$((attempts + 1));
+  STATUS=$?; ATTEMPTS=$((ATTEMPTS + 1));
 done
 
 # Create secrets for kpack to access registry and git server
