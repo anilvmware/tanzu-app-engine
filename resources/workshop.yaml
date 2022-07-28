@@ -1,15 +1,15 @@
 apiVersion: training.educates.dev/v1beta1
 kind: Workshop
 metadata:
-  name: lab-kpack-kubecon
+  name: lab-kpack
 spec:
   title: Building Images with kpack
   description: Learn how kpack can help you build images securely and efficiently at scale
-  url: https://github.com/vmware-tanzu-labs/lab-kpack-kubecon
+  url: https://github.com/vmware-tanzu-labs/lab-kpack
   workshop:
     files:
     - image:
-        url: $(image_repository)/lab-kpack-kubecon-files:latest
+        url: $(image_repository)/lab-kpack-files:latest
       includePaths:
       - /workshop/**
   session:
