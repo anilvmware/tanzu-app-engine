@@ -1,16 +1,16 @@
 apiVersion: training.educates.dev/v1beta1
 kind: Workshop
 metadata:
-  name: tanzu-app-engine 
+  name: app-engine 
 spec:
   title: Explore Tanzu Application Engine 
-  description:Tanzu Application Engine provides an application-focused abstraction called Spaces that enables platform engineers to curate and provide application developers and DevOps with enterprise-approved app environments and configurations using self-service APIs. Platform engineers and DevOps maintain control and ensure governance and continuous compliance for applications across cost, performance, and security metrics.
+  description: Tanzu Application Engine provides an application-focused abstraction called Spaces that enables platform engineers to curate and provide application developers and DevOps with enterprise-approved app environments and configurations using self-service APIs. Platform engineers and DevOps maintain control and ensure governance and continuous compliance for applications across cost, performance, and security metrics.
   vendor: educates.dev
   difficulty: beginner
   duration: 15m
   url: https://github.com/anilvmware/tanzu-app-engine
   workshop:
-    image: ghcr.io/anilvmware/tap-gitops-image:test
+    image: ghcr.io/anilvmware/app-engine-image:v1
     files:
     - git:
         url: https://github.com/anilvmware/tanzu-app-engine
