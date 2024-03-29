@@ -1,15 +1,24 @@
 apiVersion: training.educates.dev/v1beta1
 kind: TrainingPortal
 metadata:
-  name: lab-kpack
+  name: app-engine 
+  annotations:
+    kapp.k14s.io/update-strategy: always-replace
 spec:
   portal:
+    title: Tanzu Application Engine demo 
+    password: welcome
     registration:
       type: anonymous
+      enabled: true
     updates:
       workshop: true
+    sessions:
+      maximum: 45
   workshops:
-  - name: lab-kpack
-    capacity: 1
-    expires: 30m
-    orphaned: 5m
+    - name: app-engine
+      expires: 360m
+      orphaned: 120m
+      capacity: 20
+      reserved: 1
+
