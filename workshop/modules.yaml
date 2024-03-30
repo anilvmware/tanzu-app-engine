@@ -1,19 +1,22 @@
 modules:
   overview:
-    name: Workshop Intro
-    exit_sign: Start Workshop
-  exercises/01-kpack-create-image:
-    name: Build an Image
-    exit_sign: Next
+    name: Application Engine Overview
+    exit_sign: Getting started
+  exercises/01-getting-started:
+    name: Getting started
+    exit_sign: Setup Infrastructure
   exercises/02-kpack-rebuild-image:
-    name: Rebuild the Image
-    exit_sign: Next
+    name: Setup Infrastructure
+    exit_sign: Create Application Environement
   exercises/03-kpack-inspect-sbom:
-    name: Inspect the Image and Bill of Materials
-    exit_sign: Next
+    name: Create Application Environement
+    exit_sign: Deploy first App Space
   exercises/04-kpack-rebase-image:
-    name: Rebase the Image
-    exit_sign: Next
+    name: Deploy first App Space
+    exit_sign: Increase application resilience
+  exercises/05-kpack-rebase-image:
+    name: Deploy first App Space
+    exit_sign: Next  
   summary:
     name: Workshop Summary
     exit_sign: Finish Workshop
