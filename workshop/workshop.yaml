@@ -1,8 +1,9 @@
-name: kpack Overview
+name: Tanzu Application Engine Overview
 
 modules:
     activate:
     - overview
+    - exercises/01-getting-started
     - exercises/01-kpack-create-image
     - exercises/02-kpack-rebuild-image
     - exercises/03-kpack-inspect-sbom
