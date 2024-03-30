@@ -10,4 +10,4 @@ In this workshop, you will use kpack to:
 - Deploy your first application
 - Increate application resilience
 
-![](exercise/images/app-engine-overview.png)
+![](exercises/images/app-engine-overview.png)
